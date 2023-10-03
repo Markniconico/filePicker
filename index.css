@@ -1,0 +1,68 @@
+.drag_container{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+#file_picker,
+#directory_picker{
+    position: relative;
+    margin: 10px 20px 10px 0;
+    width: 100px;
+    height: 44px;
+     border-radius: 8px;
+     overflow: hidden;
+     cursor: pointer;
+}
+
+#file_picker::before,
+#directory_picker::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right:0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgb(0, 162, 255);
+}
+
+#file_picker::after,
+#directory_picker::after{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    color: #fff;
+}
+
+#file_picker::after{
+    content: '选择文件';
+}
+
+#directory_picker::after{
+    content: '选择文件夹';
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+ul li img{
+    height: 80px;
+}
+
+ul li .status{
+    color: red;
+}
